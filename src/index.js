@@ -3,4 +3,19 @@ import ReactDOM from "react-dom";
 
 const rootElement = document.getElementById("root");
 const root = ReactDOM.createRoot(rootElement);
-root.render(<h1>Hola mundo</h1>);
+
+/* User list component */
+function UserList() {
+    return <div>
+        <h1>Usuarios</h1>
+    </div>
+
+}
+root.render(
+    <div>
+        <UserList />
+        <UserList />
+        <UserList />
+        <UserList />
+    </div>
+);
