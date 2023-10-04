@@ -1,11 +1,5 @@
 /* User list component */
-export function UserList() {
-    const user = {
-        name: "John",
-        lastname: "Doe",
-        age: 25,
-        email: "sdjfalskdjf"
-    };
+export function UserList({ user }) {
 
     return (<div>
         <h1>Usuarios</h1>
