@@ -9,6 +9,7 @@ export function AddUser() {
             name: e.target.name.value,
             apellidoPaterno: e.target.lastName.value,
             apellidoMaterno: e.target.matriName.value,
+            age: e.target.matriName.age,
             email: e.target.email.value,
             fechaNac: e.target.birthDate.value,
             datos: {
@@ -36,6 +37,10 @@ export function AddUser() {
             <div className="mb-3">
                 <label htmlFor="matriName" className="form-label">Apellido Materno</label>
                 <input type="text" className="form-control" id="matriName" />
+            </div>
+            <div className="mb-3">
+                <label htmlFor="age" className="form-label">Edad</label>
+                <input type="number" className="form-control" id="age" />
             </div>
             <div className="mb-3">
                 <label htmlFor="email" className="form-label">Email</label>
