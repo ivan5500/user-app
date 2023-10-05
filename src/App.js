@@ -1,4 +1,5 @@
 import { UserList } from "./components/User/UserList"
+import { AddUser } from "./components/User/AddUser";
 
 const user = {
     "id": 33,
@@ -22,6 +23,7 @@ const user = {
 export function App() {
     return (
         <>
+            <AddUser />
             <UserList user={user} />
         </>
     )
