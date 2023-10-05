@@ -27,17 +27,42 @@ export function UserList({ user }) {
 
     return (<>
         <h1>Usuarios</h1>
-        {/* map de users */}
-        <div className="container">
-            {users.map((user) => (
-                <div className="card" key={user.id}>
-                    <img src={user.datos.imagen} alt="Avatar" style={{ width: "100%" }} />
-                    <div className="container">
-                        <h4><b>{user.nombre} {user.apellidoPaterno} {user.apellidoMaterno}</b></h4>
-                        <p>{user.email}</p>
-                    </div>
-                </div>
-            ))}
+        <div className='container'>
+            <div className='table-responsive'>
+                <table className="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Apellido Paterno</th>
+                            <th>Apellido Materno</th>
+                            <th>Edad</th>
+                            <th>Email</th>
+                            <th>Fecha de Nacimiento</th>
+                            <th>Calle</th>
+                            <th>IMG</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {users.map((user) => (
+                            <tr key={user.id}>
+                                <td>{user.id}</td>
+                                <td>{user.nombre}</td>
+                                <td>{user.apellidoPaterno}</td>
+                                <td>{user.apellidoMaterno}</td>
+                                <td>{user.edad}</td>
+                                <td>{user.email}</td>
+                                <td>{user.fechaNac}</td>
+                                <td>{user.datos.calle}</td>
+                                <td>
+
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+            <button className="btn btn-primary" >Actualizar</button>
         </div>
     </>
     )
