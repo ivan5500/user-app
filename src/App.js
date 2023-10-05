@@ -1,4 +1,4 @@
-import { UserList } from "./User/UserList"
+import { UserList } from "./components/User/UserList"
 
 const user = {
     "id": 33,
