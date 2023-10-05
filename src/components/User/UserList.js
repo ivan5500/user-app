@@ -1,23 +1,9 @@
-import { useEffect, useState } from "react";
 import "./user.css";
-import { getUsers } from "../../services/user-service";
+import { useUsers } from "../../hooks/useUsers";
 
 /* User list component */
-export function UserList({ user }) {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    fetchUsers();
-  }, []);
-
-  const fetchUsers = async () => {
-    try {
-      const users = await getUsers();
-      setUsers(users);
-    } catch (err) {
-      console.error(err);
-    }
-  };
+export function UserList() {
+  const { users } = useUsers();
 
   return (
     <>
