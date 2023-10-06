@@ -50,6 +50,7 @@ export function UserList() {
                   ) {
                     return user;
                   }
+                  return false;
                 })
                 .map((user) => (
                   <tr key={user.id}>
