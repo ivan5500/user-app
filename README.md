@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+Prueba técnica 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+La siguiente prueba técnica se debe realizar una aplicación WEB con las siguientes caracteristicas:  
 
-## Available Scripts
+- Desarrollar la prueba con Reactjs e implementar Bootstrap. 
+- Implementar Axios / CURL / Fetch para consumo de Web Services. 
+- Subir la prueba en un repositorio de GITHUB. 
 
-In the project directory, you can run:
+Descripción 
 
-### `npm start`
+Con la siguiente API se adjunta el archivo swagger, lo puedes visualizar en **https://editor.swagger.io** para ver información del servicio.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+URL:  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**https://api.devdicio.net:8444/v1/sec\_dev\_interview** 
 
-### `npm test`
+Agregando al header el siguiente token:  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**headers: { ![](Aspose.Words.642ebdcf-ae80-4187-ab50-9f9e16d645bb.001.png)**
 
-### `npm run build`
+**'Content-Type': 'application/json',** 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**'Host: api.devdicio.net',** 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**'xc-token': "J38b4XQNLErVatKIh4oP1jw9e\_wYWkS86Y04TMNP"** 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**}** 
 
-### `npm run eject`
+Esta Aplicación, tendrá 2 secciones:  
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Alta de usuario con foto**.- Se debe construir un formulario para un registro de usuarios que tenga las características mencionadas más adelante.
+- **Visualización de datos**.- Se debe visualizar la información de los usuarios ya registrados.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1\. **Alta de usuario**. Construir un formulario que contenga los siguiente datos y validación de los mismos: 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Formulario**. (5 puntos total) 
+1. Nombre (Campo no vacío y solo letras) 
+1. Apellido Paterno (Campo no vacío y solo letras) 
+1. Apellido Materno (Campo no vacío y solo letras) 
+1. Email (Formato de email) 
+1. Fecha de Nacimiento  **(**AAAA-MM-DD) 
+1. Datos:  
+- Calle (Campo no vacío y solo letras) 
+- Numero (Campo no vacío y solo numeros) 
+- Colonia (Campo no vacío) 
+- Delegacion/Municipio (Campo no vacío) 
+- Estado (Campo no vacío y solo letras) 
+- CP (Campo no vacío y solo numeros) 
+- Fotografía.- El usuario deberá tomar una **foto** desde la **cámara** y realizar lo siguiente: 
+  - **Guía en sefie**. Poner una guia para centrar el rostro.  
+  - **Envío**. Para el envío al web service se debe enviar en base64 y tener formato png, además de recortar la imagen puede ser manual (el usuario lo gestione el recorte) o automático desde el centro de 300x300. 
+    - Ejemplo: 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![](Aspose.Words.642ebdcf-ae80-4187-ab50-9f9e16d645bb.002.png)
 
-## Learn More
+2. **Visualización datos**. (3 puntos) En un menu/pestaña/popup donde se pueda ver la información guardada en una tabla con todos los usuarios incluye **información pesonal como fotografía** y un **filtro de búsqueda** por nombre.  
+2. **OPCIONAL**. **Edición de datos**. (1 punto) Una sección donde se pueda editar la información de los usuarios registrados.  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Ejemplo** de estructura de datos a guardar: 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![](Aspose.Words.642ebdcf-ae80-4187-ab50-9f9e16d645bb.003.jpeg)
 
-### Code Splitting
+**Consideraciones**: (2 puntos) 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Se debe construir en React JS y uso de hooks.  
+1. Crear **README** con lo solicitado de las instrucciones. 
+1. Diseño responsivo y patrones de diseño. 
+1. Buen uso de git (commits bien definidos y documentados). 
 
-### Analyzing the Bundle Size
+**Restricciones**: 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Al finalizar, súbelo a GitHub. Por favor, mandame un correo de confirmación y compartelo con este usuario:  
 
-### Making a Progressive Web App
+- **Robyrojas**  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Cualquier duda que tengas respecto a la prueba, no dudes en contactarnos. 
 
-### Advanced Configuration
+Te pido también que confirmes este mail para confirmar que lo recibiste correctamente.  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Saludos.  
