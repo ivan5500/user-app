@@ -6,6 +6,7 @@ import { useState } from "react";
 
 export function AddUser() {
   const [imgSrc, setImgSrc] = useState("");
+  const patternOnlyLetters = /^[A-Za-zÁáÉéÍíÓóÚúÜüÑñ\s]+$/;
   const {
     register,
     handleSubmit,
@@ -71,7 +72,7 @@ export function AddUser() {
                 message: "Este campo es requerido",
               },
               pattern: {
-                value: /^[A-Za-z]+$/i,
+                value: patternOnlyLetters,
                 message: "Este campo solo acepta letras",
               },
             })}
@@ -94,7 +95,7 @@ export function AddUser() {
                 message: "Este campo es requerido",
               },
               pattern: {
-                value: /^[A-Za-z]+$/i,
+                value: patternOnlyLetters,
                 message: "Este campo solo acepta letras",
               },
             })}
@@ -117,7 +118,7 @@ export function AddUser() {
                 message: "Este campo es requerido",
               },
               pattern: {
-                value: /^[A-Za-z]+$/i,
+                value: patternOnlyLetters,
                 message: "Este campo solo acepta letras",
               },
             })}
@@ -182,7 +183,7 @@ export function AddUser() {
                 message: "Este campo es requerido",
               },
               pattern: {
-                value: /^[A-Za-z]+$/i,
+                value: patternOnlyLetters,
                 message: "Este campo solo acepta letras",
               },
             })}
@@ -270,7 +271,7 @@ export function AddUser() {
                 message: "Este campo es requerido",
               },
               pattern: {
-                value: /^[A-Za-z]+$/i,
+                value: patternOnlyLetters,
                 message: "Este campo solo acepta letras",
               },
             })}
