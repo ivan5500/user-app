@@ -1,19 +1,36 @@
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import "./user.css";
+import { addUser } from "../../services/user-service";
 
 export function AddUser() {
-  const [user, setUser] = useState({});
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
-  console.log(errors);
+  const saveUser = async (user) => {
+    try {
+      const response = await addUser(user);
+      console.log(response);
+      alert("Usuario guardado correctamente");
+      reset();
+    } catch (error) {
+      alert("Error al guardar el usuario");
+      console.log(error);
+    }
+  };
 
   const onSubmit = handleSubmit((data) => {
-    console.log(data);
+    const newUser = {
+      nombre: data.name,
+      apellidoPaterno: data.lastName,
+      apellidoMaterno: data.matriName,
+      email: data.email,
+      fechaNac: data.birthDate,
+    };
+    saveUser(newUser);
   });
 
   return (

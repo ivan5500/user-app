@@ -8,3 +8,12 @@ export async function getUsers() {
   console.log(response.data);
   return response.data;
 }
+
+export async function addUser(user) {
+  const response = await axios
+    .post(userUrl, user, requestOptions)
+    .catch((err) => {
+      throw err;
+    });
+  return response.data;
+}
