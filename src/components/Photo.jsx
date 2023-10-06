@@ -1,14 +1,19 @@
 import Webcam from "react-webcam";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useRef } from "react";
 
-export function Photo() {
+export function Photo({ savePhoto }) {
   const webcamRef = useRef(null);
-  const [imgSrc, setImgSrc] = useState(null);
+  const constraints = {
+    width: 300,
+    height: 300,
+    facingMode: "user",
+  };
 
   const capture = useCallback(() => {
     const imageSrc = webcamRef.current.getScreenshot();
-    setImgSrc(imageSrc);
-  }, [webcamRef, setImgSrc]);
+    console.log(imageSrc);
+    savePhoto(imageSrc);
+  }, [webcamRef, savePhoto]);
 
   return (
     <>
@@ -20,6 +25,7 @@ export function Photo() {
             screenshotFormat="image/png"
             width={300}
             height={300}
+            videoConstraints={constraints}
           />
         </div>
       </div>
@@ -30,7 +36,6 @@ export function Photo() {
           </button>
         </div>
       </div>
-      {imgSrc && <img src={imgSrc} />}
     </>
   );
 }
