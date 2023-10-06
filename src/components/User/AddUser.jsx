@@ -275,7 +275,7 @@ export function AddUser() {
         )}
       </div>
       <button type="submit" className="btn btn-primary">
-        Submit
+        Guardar usuario
       </button>
     </form>
   );
