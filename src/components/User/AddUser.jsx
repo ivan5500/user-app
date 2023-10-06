@@ -1,8 +1,11 @@
 import { useForm } from "react-hook-form";
 import "./user.css";
 import { addUser } from "../../services/user-service";
+import { Photo } from "../Photo";
+import { useState } from "react";
 
 export function AddUser() {
+  const [imgSrc, setImgSrc] = useState("");
   const {
     register,
     handleSubmit,
@@ -23,6 +26,11 @@ export function AddUser() {
     }
   };
 
+  const savePhoto = (imgSrcBase64) => {
+    console.log(imgSrcBase64);
+    setImgSrc(imgSrcBase64);
+  };
+
   const onSubmit = handleSubmit((data) => {
     const datos = {
       calle: data.street,
@@ -31,6 +39,7 @@ export function AddUser() {
       delegacion: data.delegation,
       estado: data.state,
       cp: data.pc,
+      imagen: imgSrc,
     };
     const newUser = {
       nombre: data.name,
@@ -291,6 +300,10 @@ export function AddUser() {
           {errors.pc && (
             <span className="userFieldRequired">{errors.pc.message}</span>
           )}
+        </div>
+        <div className="mb-1">
+          <Photo savePhoto={savePhoto} />
+          {imgSrc && <img src={imgSrc} alt="Photo" />}
         </div>
         <button type="submit" className="btn btn-primary">
           Guardar usuario
