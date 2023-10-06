@@ -12,6 +12,7 @@ export function AddUser() {
 
   const saveUser = async (user) => {
     try {
+      console.log(user);
       const response = await addUser(user);
       console.log(response);
       alert("Usuario guardado correctamente");
@@ -23,12 +24,21 @@ export function AddUser() {
   };
 
   const onSubmit = handleSubmit((data) => {
+    const datos = {
+      calle: data.street,
+      numero: data.num,
+      colonia: data.neighborhood,
+      delegacion: data.delegation,
+      estado: data.state,
+      cp: data.pc,
+    };
     const newUser = {
       nombre: data.name,
       apellidoPaterno: data.lastName,
       apellidoMaterno: data.matriName,
       email: data.email,
       fechaNac: data.birthDate,
+      datos: JSON.stringify(datos),
     };
     saveUser(newUser);
   });
