@@ -9,7 +9,8 @@ export function Photo({ savePhoto }) {
     facingMode: "user",
   };
 
-  const capture = useCallback(() => {
+  const capture = useCallback((event) => {
+    event.preventDefault();
     const imageSrc = webcamRef.current.getScreenshot();
     console.log(imageSrc);
     savePhoto(imageSrc);
