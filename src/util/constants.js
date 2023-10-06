@@ -1,4 +1,4 @@
-export const userUrl = "https://api.devdicio.net:8444/v1/sec_dev_interview";
+export const userUrl = "https://api.devdicio.net:8444/v1/sec_dev_interview?limit=1000";
 export const requestOptions = {
   headers: {
     "Content-Type": "application/json",

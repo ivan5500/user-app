@@ -20,6 +20,7 @@ export function AddUser() {
       console.log(response);
       alert("Usuario guardado correctamente");
       reset();
+      setImgSrc("");
     } catch (error) {
       alert("Error al guardar el usuario");
       console.log(error);
