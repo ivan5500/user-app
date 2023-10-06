@@ -8,24 +8,23 @@ export function UserList() {
   const { users } = useUsers();
 
   function handleOnChanges(event) {
-    console.log(event.target.value);
     setQuery(event.target.value.trim());
   }
 
   return (
     <>
-      <h1>Usuarios</h1>
-      <div className="input-group input-group-lg">
-        <span className="input-group-text" id="inputGroup-sizing-lg">
-          Buscar
-        </span>
-        <input
-          type="text"
-          className="form-control"
-          onChange={handleOnChanges}
-        />
-      </div>
       <div className="container">
+        <h1>Usuarios</h1>
+        <div className="input-group input-group-lg">
+          <span className="input-group-text" id="inputGroup-sizing-lg">
+            Buscar
+          </span>
+          <input
+            type="text"
+            className="form-control"
+            onChange={handleOnChanges}
+          />
+        </div>
         <div className="table-responsive">
           <table className="table table-bordered">
             <thead>
@@ -63,7 +62,7 @@ export function UserList() {
                     <td>{user?.fechaNac}</td>
                     <td>{user?.datos?.calle}</td>
                     <td>
-                      {/* <img className="img-fluid img-thumbnail" src={user?.datos?.imagen} alt="Avatar" /> */}
+                      <img className="img-fluid img-thumbnail" src={user?.datos?.imagen} alt="Avatar" />
                     </td>
                   </tr>
                 ))}
