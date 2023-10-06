@@ -36,8 +36,13 @@ export function UserList() {
                 <th>Edad</th>
                 <th>Email</th>
                 <th>Fecha de Nacimiento</th>
-                <th>Calle</th>
                 <th>IMG</th>
+                <th>Calle</th>
+                <th>Número</th>
+                <th>Colonia</th>
+                <th>Delegación</th>
+                <th>Estado</th>
+                <th>CP</th>
               </tr>
             </thead>
             <tbody className="table-group-divider">
@@ -61,10 +66,15 @@ export function UserList() {
                     <td>{user?.edad}</td>
                     <td>{user?.email}</td>
                     <td>{user?.fechaNac}</td>
-                    <td>{user?.datos?.calle}</td>
                     <td>
                       <img className="img-fluid img-thumbnail" src={user?.datos?.imagen} alt="Avatar" />
                     </td>
+                    <td>{user?.datos?.calle}</td>
+                    <td>{user?.datos?.numero}</td>
+                    <td>{user?.datos?.colonia}</td>
+                    <td>{user?.datos?.delegacion}</td>
+                    <td>{user?.datos?.estado}</td>
+                    <td>{user?.datos?.cp}</td>
                   </tr>
                 ))}
             </tbody>
