@@ -305,7 +305,7 @@ export function AddUser() {
         </div>
         <div className="mb-1">
           <Photo savePhoto={savePhoto} />
-          {imgSrc && <img src={imgSrc} alt="Photo" />}
+          {imgSrc && <img src={imgSrc} alt="Avatar" />}
         </div>
         <button type="submit" className="btn btn-primary">
           Guardar usuario
