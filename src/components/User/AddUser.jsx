@@ -335,7 +335,7 @@ export function AddUser() {
             className="form-control"
             value={imgSrc}
             disabled={true}
-            id="pc"
+            id="photo"
             {...register("photo", {
               validate: {
                 validatePhoto,
