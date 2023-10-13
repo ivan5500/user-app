@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import "./user.css";
 import { addUser } from "../../services/user-service";
 import { Photo } from "../Photo";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function AddUser() {
   const [imgSrc, setImgSrc] = useState("");
@@ -14,6 +14,22 @@ export function AddUser() {
     formState: { errors },
   } = useForm();
 
+  useEffect(() => {
+    getCameraPermmission();
+  }, []);
+
+  const getCameraPermmission = async () => {
+    try {
+      const mediaStream = await navigator.mediaDevices.getUserMedia({
+        video: true,
+      });
+      console.log(mediaStream);
+    } catch (error) {
+      const msg = "Por favor, habilite los permisos para usar la cámara.";
+      alert(msg);
+      window.location.reload();
+    }
+  };
   const saveUser = async (user) => {
     try {
       console.log(user);
