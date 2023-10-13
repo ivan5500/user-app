@@ -38,6 +38,13 @@ export function AddUser() {
     }
     return "La fecha debe ser anterior al día de hoy";
   };
+  const validatePhoto = (value) => {
+    if (imgSrc.trim() !== "") {
+      return true;
+    }
+    return "La foto es necesaria";
+  };
+
   const savePhoto = (imgSrcBase64) => {
     console.log(imgSrcBase64);
     setImgSrc(imgSrcBase64);
@@ -318,7 +325,26 @@ export function AddUser() {
         </div>
         <div className="mb-1">
           <Photo savePhoto={savePhoto} />
-          {imgSrc && <img src={imgSrc} alt="Avatar" />}
+        </div>
+        <div className="mb-1">
+          <label htmlFor="photo" className="form-label">
+            Contenido de imagen
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            value={imgSrc}
+            disabled={true}
+            id="pc"
+            {...register("photo", {
+              validate: {
+                validatePhoto,
+              },
+            })}
+          />
+          {errors.photo && (
+            <span className="userFieldRequired">{errors.photo.message}</span>
+          )}
         </div>
         <button type="submit" className="btn btn-primary">
           Guardar usuario
