@@ -28,6 +28,16 @@ export function AddUser() {
     }
   };
 
+  const validateDate = (date) => {
+    const today = new Date();
+    const newDate = new Date([date, "00:00"]);
+    today.setHours(0, 0, 0, 0);
+
+    if (today > newDate) {
+      return true;
+    }
+    return "La fecha debe ser anterior al día de hoy";
+  };
   const savePhoto = (imgSrcBase64) => {
     console.log(imgSrcBase64);
     setImgSrc(imgSrcBase64);
@@ -160,6 +170,9 @@ export function AddUser() {
               pattern: {
                 value: /^\d{4}-\d{2}-\d{2}$/,
                 message: "El formato de la fecha debe ser AAAA-MM-DD",
+              },
+              validate: {
+                validateDate,
               },
             })}
           />
